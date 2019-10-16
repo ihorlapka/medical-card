@@ -1,0 +1,71 @@
+@import "src/styles/variables";
+
+.dashboard-c{
+  width: 100%;
+  padding: 20px;
+  position: relative;
+  p{
+    margin: 0;
+  }
+  .dashboard-header{
+    display: flex;
+    padding: 0 0 15px;
+    border-bottom: 1px solid $lightGray;
+    p{
+      width: 100%;
+      vertical-align: middle;
+      display: flex;
+      align-items: center;
+      font-size: $fontTitle;
+      span:last-child {
+        padding-left: 15px;
+      }
+    }
+    .actions{
+      display: flex;
+      justify-content: end;
+      button{
+        margin: 0 7px;
+      }
+    }
+  }
+  .dashboard-content{
+    padding: 20px;
+    display: flex;
+    .user-data{
+      min-width: 330px;
+    }
+    .data{
+      padding-left: 20px;
+    }
+    .label {
+      padding: 5px 0;
+    }
+    .comment-block{
+      overflow-y: scroll;
+      max-height: 90%;
+    }
+    .comments{
+      background-color: $gray-100;
+      padding: 20px;
+      border-radius: 4px;
+      .title{
+        font-size: $fontTitle;
+      }
+      .one-com{
+        padding: 10px 0;
+      }
+    }
+    .add-com{
+      display: flex;
+      textarea{
+        width: 100%;
+        resize: none;
+        height: 70px;
+      }
+      button{
+        height: 75px;
+      }
+    }
+  }
+}

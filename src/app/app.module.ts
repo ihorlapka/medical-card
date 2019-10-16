@@ -3,16 +3,25 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AppMedicalCartComponent } from './medical-cart/app-medical-cart.component';
+import { SidebarComponent } from './sidebar-component/sidebar.component';
+import { DashboardComponent } from './dashboard-component/dashboard.component';
+import { ApiService } from './services/api.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AppMedicalCartComponent,
+    SidebarComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClient, ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

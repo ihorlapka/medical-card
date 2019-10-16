@@ -1,0 +1,10 @@
+.input-mc {
+  height: 30px;
+  width: 100%;
+  padding: 0 10px;
+  color: $fontColor;
+  font-size: $fontSize;
+  &:focus {
+    outline:none;
+  }
+}

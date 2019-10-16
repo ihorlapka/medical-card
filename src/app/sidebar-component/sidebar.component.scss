@@ -1,0 +1,66 @@
+@import "src/styles/variables";
+
+.sidebar-c{
+  width: 100%;
+  padding: 20px 0 70px 0;
+  position: relative;
+  .search{
+    display: flex;
+    padding: 0 20px 20px;
+    border-bottom: 1px solid $lightGray;
+  }
+  .user-list{
+    padding: 20px 20px 0;
+    overflow-y: scroll;
+    max-height: 90%;
+  }
+  .patient{
+    font-size: $fontSize;
+    color: $fontColor;
+    padding: 10px;
+    border: 1px solid $lightGray;
+    border-radius: 4px;
+    display: flex;
+    margin: 5px 0;
+    .personal-data{
+      width: 100%;
+    }
+    p{
+      margin: 0;
+      span:last-child{
+        padding-left: 15px;
+      }
+      &:first-child{
+        padding-bottom: 10px;
+      }
+    }
+    .icon-block{
+      display: flex;
+      justify-content: end;
+      .icon{
+        max-width: 50px;
+      }
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .add-new-patient{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    button{
+      width: 100%;
+      padding: 15px;
+      border-radius: 0;
+      background-color: #42A5F5;
+      color: #fff;
+      font-size: 14px;
+      border: 0;
+      cursor: pointer;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
