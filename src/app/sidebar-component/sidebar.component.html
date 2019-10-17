@@ -1,188 +1,20 @@
 <div class="sidebar-c">
   <div class="search">
-    <input class="input-mc">
+    <input class="input-mc" (input)="onSearchChange($event.target.value)">
   </div>
   <div class="user-list">
-    <div class="patient">
+    <div class="patient" *ngFor="let patient of displayData">
       <div class="personal-data">
         <p>
-          <span>Name</span>
-          <span>Last</span>
+          <span>{{patient.firstName}}</span>
+          <span>{{patient.lastName}}</span>
         </p>
         <p class="dob">
-          07.01.1993
+          {{patient.dateOfBirth}}
         </p>
       </div>
       <div class="icon-block">
-        <img class="icon" src="./../../assets/ambulance-call.svg">
-      </div>
-    </div>
-    <div class="patient">
-      <div class="personal-data">
-        <p>
-          <span>Name</span>
-          <span>Last</span>
-        </p>
-        <p class="dob">
-          07.01.1993
-        </p>
-      </div>
-      <div class="icon-block">
-        <img class="icon" src="./../../assets/ambulance-call.svg">
-      </div>
-    </div>
-    <div class="patient">
-      <div class="personal-data">
-        <p>
-          <span>Name</span>
-          <span>Last</span>
-        </p>
-        <p class="dob">
-          07.01.1993
-        </p>
-      </div>
-      <div class="icon-block">
-        <img class="icon" src="./../../assets/ambulance-call.svg">
-      </div>
-    </div>
-    <div class="patient">
-      <div class="personal-data">
-        <p>
-          <span>Name</span>
-          <span>Last</span>
-        </p>
-        <p class="dob">
-          07.01.1993
-        </p>
-      </div>
-      <div class="icon-block">
-        <img class="icon" src="./../../assets/ambulance-call.svg">
-      </div>
-    </div>
-    <div class="patient">
-      <div class="personal-data">
-        <p>
-          <span>Name</span>
-          <span>Last</span>
-        </p>
-        <p class="dob">
-          07.01.1993
-        </p>
-      </div>
-      <div class="icon-block">
-        <img class="icon" src="./../../assets/ambulance-call.svg">
-      </div>
-    </div>
-    <div class="patient">
-      <div class="personal-data">
-        <p>
-          <span>Name</span>
-          <span>Last</span>
-        </p>
-        <p class="dob">
-          07.01.1993
-        </p>
-      </div>
-      <div class="icon-block">
-        <img class="icon" src="./../../assets/ambulance-call.svg">
-      </div>
-    </div>
-    <div class="patient">
-      <div class="personal-data">
-        <p>
-          <span>Name</span>
-          <span>Last</span>
-        </p>
-        <p class="dob">
-          07.01.1993
-        </p>
-      </div>
-      <div class="icon-block">
-        <img class="icon" src="./../../assets/ambulance-call.svg">
-      </div>
-    </div>
-    <div class="patient">
-      <div class="personal-data">
-        <p>
-          <span>Name</span>
-          <span>Last</span>
-        </p>
-        <p class="dob">
-          07.01.1993
-        </p>
-      </div>
-      <div class="icon-block">
-        <img class="icon" src="./../../assets/ambulance-call.svg">
-      </div>
-    </div>
-    <div class="patient">
-      <div class="personal-data">
-        <p>
-          <span>Name</span>
-          <span>Last</span>
-        </p>
-        <p class="dob">
-          07.01.1993
-        </p>
-      </div>
-      <div class="icon-block">
-        <img class="icon" src="./../../assets/ambulance-call.svg">
-      </div>
-    </div>
-    <div class="patient">
-      <div class="personal-data">
-        <p>
-          <span>Name</span>
-          <span>Last</span>
-        </p>
-        <p class="dob">
-          07.01.1993
-        </p>
-      </div>
-      <div class="icon-block">
-        <img class="icon" src="./../../assets/ambulance-call.svg">
-      </div>
-    </div>
-    <div class="patient">
-      <div class="personal-data">
-        <p>
-          <span>Name</span>
-          <span>Last</span>
-        </p>
-        <p class="dob">
-          07.01.1993
-        </p>
-      </div>
-      <div class="icon-block">
-        <img class="icon" src="./../../assets/ambulance-call.svg">
-      </div>
-    </div>
-    <div class="patient">
-      <div class="personal-data">
-        <p>
-          <span>Name</span>
-          <span>Last</span>
-        </p>
-        <p class="dob">
-          07.01.1993
-        </p>
-      </div>
-      <div class="icon-block">
-        <img class="icon" src="./../../assets/ambulance-call.svg">
-      </div>
-    </div>
-    <div class="patient">
-      <div class="personal-data">
-        <p>
-          <span>Name</span>
-          <span>Last</span>
-        </p>
-        <p class="dob">
-          07.01.1993
-        </p>
-      </div>
-      <div class="icon-block">
-        <img class="icon" src="./../../assets/ambulance-call.svg">
+        <img class="icon" src="{{patient.icon}}" alt="icon" width="20" height="35">
       </div>
     </div>
   </div>

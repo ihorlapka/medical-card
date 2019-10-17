@@ -8,13 +8,15 @@ import { SidebarComponent } from './sidebar-component/sidebar.component';
 import { DashboardComponent } from './dashboard-component/dashboard.component';
 import { ApiService } from './services/api.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AddPatientComponent } from './add-patient/add-patient.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppMedicalCartComponent,
     SidebarComponent,
-    DashboardComponent
+    DashboardComponent,
+    AddPatientComponent
   ],
   imports: [
     BrowserModule,

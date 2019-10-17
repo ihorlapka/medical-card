@@ -3,7 +3,9 @@ import {Injectable} from '@angular/core';
 
 @Injectable()
 export class ApiService {
+
   private urlApiBase = 'http://localhost';
+
   constructor(
     private http: HttpClient
   ) { }
