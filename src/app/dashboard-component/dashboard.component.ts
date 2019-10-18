@@ -1,4 +1,5 @@
-import {Component, Input, OnInit, OnChanges} from '@angular/core';
+import {Component, Input, OnInit, OnChanges, Output, EventEmitter} from '@angular/core';
+import {ApiService} from '../services/api.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +11,12 @@ export class DashboardComponent implements OnInit, OnChanges {
 
   @Input()
   patientData: any;
+
+  @Output()
+  changePatientList = new EventEmitter();
+
   constructor(
+    private api: ApiService
   ) {
   }
 
@@ -20,5 +26,17 @@ export class DashboardComponent implements OnInit, OnChanges {
 
   ngOnInit() {
 
+  }
+
+  savePatient() {
+    this.api.savePatients(this.patientData).subscribe( (value => {
+      this.changePatientList.emit();
+    }));
+  }
+
+  deletePatient(id) {
+    this.api.deletePatient(this.patientData.id).subscribe((value => {
+      this.changePatientList.emit();
+    }));
   }
 }

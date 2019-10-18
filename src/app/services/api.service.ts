@@ -19,6 +19,11 @@ export class ApiService {
     const url = `${this.urlApiBase}` + '/addPatient';
     return this.http.post(url, body);
   }
+
+  deletePatient(id) {
+    const url = `${this.urlApiBase}` + '/deletePat/' + id;
+    return this.http.post(url, id);
+  }
 }
 
 

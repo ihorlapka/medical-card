@@ -1,6 +1,4 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Router} from '@angular/router';
 import {ApiService} from '../services/api.service';
 
 @Component({
@@ -11,6 +9,7 @@ import {ApiService} from '../services/api.service';
 export class AddPatientComponent implements OnInit {
 
   patientData = {
+    id: 0,
     firstName: '',
     lastName: '',
     age: 0,
@@ -37,6 +36,4 @@ export class AddPatientComponent implements OnInit {
       this.changePatientList.emit();
     }));
   }
-
-
 }

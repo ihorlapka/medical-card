@@ -29,7 +29,7 @@ export class AppMedicalCartComponent implements OnInit {
     this.selectedPatient = this.patientDataAll[index];
   }
   addNewPatient(val: boolean) {
-    console.log(val)
+    console.log(val);
     this.editMode = val;
   }
 }
