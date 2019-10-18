@@ -1,4 +1,5 @@
-<div class="medical-card">
-  <app-sidebar class="sidebar"></app-sidebar>
-  <app-dashboard class="dashboard"></app-dashboard>
+<div class="medical-card" *ngIf="patientDataAll ">
+  <app-sidebar class="sidebar" [patientDataAll]="patientDataAll" (addNewPatient)="addNewPatient($event)" (patientSelected)="patientSelected($event)"></app-sidebar>
+  <app-dashboard *ngIf="selectedPatient && !editMode" class="dashboard" [patientData]="selectedPatient" ></app-dashboard>
+  <app-add-patient *ngIf="editMode" (changePatientList)="getData()" class="dashboard"></app-add-patient>
 </div>

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, OnChanges} from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,10 +6,16 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, OnChanges {
 
+  @Input()
+  patientData: any;
   constructor(
   ) {
+  }
+
+  ngOnChanges() {
+    console.log(this.patientData);
   }
 
   ngOnInit() {

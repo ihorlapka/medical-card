@@ -1,51 +1,48 @@
-<h1>Patient Registration</h1>
 <div class="registration">
+  <h1>Patient Registration</h1>
   <div>
     <label>
-      <input type="text" placeholder="First Name">
+      <input type="text" placeholder="First Name" [(ngModel)]="patientData.firstName">
     </label>
   </div><br>
   <div>
     <label>
-      <input type="text" placeholder="Last Name">
+      <input type="text" placeholder="Last Name" [(ngModel)]="patientData.lastName">
     </label>
   </div><br>
   <div>
     <label>
-      <input type="text" placeholder="Age">
+      <input type="text" placeholder="Age" [(ngModel)]="patientData.age">
     </label>
   </div><br>
   <div>
     <label>
-      <input type="date" placeholder="Date Of Birth">
+      <input type="date" placeholder="Date Of Birth" [(ngModel)]="patientData.dateOfBirth">
     </label>
   </div><br>
   <div>
     <label>
-      <input type="radio" value="MALE">Male
-      <input type="radio" value="FEMALE">Female
-      <input type="radio" value="OTHERS">Other
+      <input type="radio" value="MALE" [(ngModel)]="patientData.sex">Male
+      <input type="radio" value="FEMALE" [(ngModel)]="patientData.sex">Female
+      <input type="radio" value="OTHERS" [(ngModel)]="patientData.sex">Other
     </label>
   </div><br>
   <div>
     <label>
-      <input type="text" placeholder="Country">
+      <input type="text" placeholder="Country" [(ngModel)]="patientData.country">
     </label>
   </div><br>
   <div>
     <label>
-      <input type="text" placeholder="State">
+      <input type="text" placeholder="State" [(ngModel)]="patientData.state">
     </label>
   </div><br>
   <div>
     <label>
-      <input type="text" placeholder="Address">
+      <input type="text" placeholder="Address" [(ngModel)]="patientData.address">
     </label>
   </div><br>
   <div>
-    <input type="submit" value="Register">
+    <button type="submit" value="Register" (click)="savePatient()">Register</button>
   </div><br>
-  <div>
-  <button>Home</button>
-  </div>
 </div>

@@ -3,8 +3,8 @@
     <input class="input-mc" (input)="onSearchChange($event.target.value)">
   </div>
   <div class="user-list">
-    <div class="patient" *ngFor="let patient of displayData">
-      <div class="personal-data">
+    <div class="patient" *ngFor="let patient of displayData; let i = index">
+      <div class="personal-data" (click)="selectPatient(i)">
         <p>
           <span>{{patient.firstName}}</span>
           <span>{{patient.lastName}}</span>
@@ -19,7 +19,7 @@
     </div>
   </div>
   <div class="add-new-patient">
-    <button>
+    <button (click)="addNew()">
       Add New Patient
     </button>
   </div>

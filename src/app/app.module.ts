@@ -9,6 +9,7 @@ import { DashboardComponent } from './dashboard-component/dashboard.component';
 import { ApiService } from './services/api.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AddPatientComponent } from './add-patient/add-patient.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AddPatientComponent } from './add-patient/add-patient.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [HttpClient, ApiService],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, OnChanges} from '@angular/core';
 import { ApiService } from '../services/api.service';
 import orderBy from 'lodash-es/orderBy';
 import cloneDeep from 'lodash-es/cloneDeep';
@@ -10,22 +10,26 @@ import {Router} from '@angular/router';
   styleUrls: ['./sidebar.component.scss']
 })
 
-export class SidebarComponent implements OnInit {
-
-  constructor(
-    private router: Router,
-    private api: ApiService
-  ) { }
+export class SidebarComponent implements OnInit, OnChanges {
 
   patientsData: any;
   displayData: any;
+  @Input()
+  patientDataAll: any;
+  @Output()
+  patientSelected = new EventEmitter();
+  @Output()
+  addNewPatient = new EventEmitter();
+  constructor(
+    private router: Router
+  ) { }
+
+  ngOnChanges() {
+    this.patientsData = orderBy(this.patientDataAll, 'firstName', 'asc');
+    this.displayData = this.patientDataAll;
+  }
 
   ngOnInit() {
-    this.api.getPatients().subscribe( (value) => {
-      this.patientsData = value;
-      this.patientsData = orderBy(value, 'firstName', 'asc');
-      this.displayData = value;
-    });
   }
 
   onSearchChange(val) {
@@ -39,5 +43,11 @@ export class SidebarComponent implements OnInit {
     this.router.navigate(['add-patient']);
   }
 
+  selectPatient(i) {
+    this.patientSelected.emit(i);
+  }
+  addNew() {
+    this.addNewPatient.emit(true);
+  }
 
 }

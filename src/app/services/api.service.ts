@@ -15,6 +15,10 @@ export class ApiService {
     const url = `${this.urlApiBase}` + '/patients';
     return this.http.get(url);
   }
+  savePatients(body) {
+    const url = `${this.urlApiBase}` + '/addPatient';
+    return this.http.post(url, body);
+  }
 }
 
 
